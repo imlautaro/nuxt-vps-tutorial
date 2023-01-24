@@ -1,0 +1,15 @@
+name: CI/CD
+on: [push]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: download changes, build and run containers
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        script: |
+          cd nuxt-app
+          git pull
+          docker-compose up -d

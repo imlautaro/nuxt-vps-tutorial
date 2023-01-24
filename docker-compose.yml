@@ -18,7 +18,7 @@ services:
     image: nginxproxy/acme-companion
     container_name: nginx-proxy-acme
     environment:
-      - DEFAULT_EMAIL=usuario@email.com
+      - DEFAULT_EMAIL=hi@imlautaro.com
     volumes_from:
       - nginx-proxy
     volumes:
@@ -33,8 +33,8 @@ services:
     expose:
       - "3000"
     environment:
-      - VIRTUAL_HOST=miweb.com,www.miweb.com
-      - LETSENCRYPT_HOST=miweb.com,www.miweb.com
+      - VIRTUAL_HOST=vps.imlautaro.com,www.imlautaro.com
+      - LETSENCRYPT_HOST=vps.imlautaro.com,www.imlautaro.com
 
 volumes:
   conf:
